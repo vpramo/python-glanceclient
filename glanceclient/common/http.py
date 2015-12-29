@@ -70,7 +70,7 @@ class HTTPClient(object):
         self.timeout = float(kwargs.get('timeout', 600))
 
         if self.endpoint.startswith("https"):
-            compression = kwargs.get('ssl_compression', True)
+            compression = True
 
             if not compression:
                 self.session.mount("glance+https://", https.HTTPSAdapter())
